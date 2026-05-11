@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Toy Story 5 - CineMax</title>
+    <link rel="stylesheet" href="css/phim.css">
+</head>
+<body>
+
+<header>
+
+<div class="header-left">
+    <a href="index.html" class="logo">
+        <img src="logo_trang_chu.png" class="logo-img">
+        CINEMAX
+    </a>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Tìm tên phim...">
+        <div id="suggestions" class="suggestions-box"></div>
+    </div>
+</div>
+
+<nav class="menu">
+    <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="phim.html" class="active">Phim</a></li>
+        <li><a href="rap.html">Rạp</a></li>
+        <li><a href="thuc_an_va_nuoc.html">Thức ăn & Nước</a></li>
+        <li><a href="khuyen_mai.html">Khuyến mãi</a></li>
+        <li><a href="dichvu_tienich.html">Dịch vụ & tiện ích</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+</nav>
+
+<div class="auth">
+    <a href="login.html" class="login-btn">Đăng nhập</a>
+    <a href="register.html" class="register-btn">Đăng ký</a>
+</div>
+
+</header>
+
+<section class="movie-detail">
+    <div class="movie-layout">
+        <div class="poster">
+            <img src="Toy Story 5.png" alt="Toy Story 5">
+        </div>
+        <div class="movie-info">
+            <h2>Toy Story 5</h2>
+            <p><b>Thể loại:</b> Hoạt hình, Phiêu lưu</p>
+            <p><b>Thời lượng:</b> 95 phút</p>
+            <p><b>Khởi chiếu:</b> 20/06/2026</p>
+            <p><b>Đạo diễn:</b> Andrew Stanton</p>
+            <p><b>Diễn viên:</b> Tom Hanks, Tim Allen (Lồng tiếng)</p>
+
+            <button class="book-btn">Đặt vé ngay</button>
+        </div>
+    </div>
+</section>
+
+<section class="trailer">
+    <h2>Trailer</h2>
+    <iframe width="900" height="500" src="https://www.youtube.com/embed/c51ND9Hdbw0" frameborder="0" allowfullscreen></iframe>
+</section>
+
+
+<!-- NỘI DUNG PHIM -->
+
+<section class="content">
+
+<h2>Nội dung phim</h2>
+
+<p>
+An all-new trailer and poster for Disney and Pixar’s highly anticipated upcoming animated adventure “Toy Story 5”
+ debut today. The toys are back and this time, Buzz Lightyear, Woody, Jessie and the rest of the gang's jobs are 
+ challenged when they come face-to-face with Lilypad (voice of Greta Lee), a brand-new tablet device that arrives
+  with her own disruptive ideas about what is best for their kid, Bonnie. Will playtime ever be the same?
+</p>
+
+</section>
+
+
+<!-- LỊCH CHIẾU -->
+
+<section class="showtimes">
+
+<h2>Lịch chiếu hôm nay</h2>
+
+<div class="times">
+
+<button>9:00</button>
+<button>11:00</button>
+<button>17:00</button>
+<button>20:00</button>
+
+</div>
+
+</section>
+
+
+<!-- POPUP ĐẶT VÉ -->
+
+<div id="bookingPopup" class="booking-popup">
+
+<div class="booking-box">
+
+<div class="booking-mode booking-mode-book">
+<h2>Đặt vé xem phim</h2>
+
+<h3>Chọn giờ chiếu</h3>
+
+<div class="time-select">
+<button class="time">9:00</button>
+<button class="time">11:00</button>
+<button class="time">17:00</button>
+<button class="time">20:00</button>
+</div>
+
+
+<h3>Chọn ghế</h3>
+
+<div class="screen">MÀN HÌNH</div>
+
+<div class="seat-container">
+
+<div class="seat">A1</div>
+<div class="seat vip">A2 Vip</div>
+<div class="seat">A3</div>
+<div class="seat">A4</div>
+<div class="seat vip">A5 Vip</div>
+<div class="seat">A6</div>
+
+<div class="seat">B1</div>
+<div class="seat">B2</div>
+<div class="seat booked">B3 Đã đặt</div>
+<div class="seat">B4</div>
+<div class="seat vip">B5 Vip</div>
+<div class="seat">B6</div>
+
+<div class="seat">C1</div>
+<div class="seat">C2</div>
+<div class="seat">C3</div>
+<div class="seat booked">C4 Đã đặt</div>
+<div class="seat">C5</div>
+<div class="seat vip">C6 Vip</div>
+
+</div>
+
+<h3>Ghế đã chọn:</h3>
+<p id="selectedSeats">Chưa chọn</p>
+
+<h3>Tổng tiền:</h3>
+<p id="totalPrice">0 VND</p>
+
+<div class="pass-link">
+Bạn muốn nhượng vé thay vì xem?
+<button type="button" class="switch-to-pass">Pass vé</button>
+</div>
+
+<p>💳 Phương thức thanh toán</p>
+
+<div class="payment-box">
+<select id="payment">
+<option>💵 Tiền mặt</option>
+<option>📱 Momo</option>
+<option>🏦 Chuyển khoản</option>
+</select>
+</div>
+
+<div class="booking-buttons">
+<button class="confirm-btn">🎟 Xác nhận đặt vé</button>
+<button class="cancel-btn">🔄 Hủy vé</button>
+<button class="close-btn" onclick="closeBooking()">❌ Đóng</button>
+</div>
+</div>
+
+<div class="booking-mode booking-mode-pass hidden">
+<h2>Nhượng vé cho bạn bè</h2>
+<p>Nhập tên người nhận để gửi vé.</p>
+<label for="passRecipient">Tên người nhận:</label>
+<input id="passRecipient" type="text" placeholder="Nhập tên người nhận vé">
+<button type="button" class="pass-confirm-btn">🎁 Xác nhận Pass vé</button>
+<p class="pass-message"></p>
+
+<div class="booking-buttons">
+<button type="button" class="switch-to-book" style="margin: 0 auto; display: block;">🔄 Quay lại Đặt vé</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LOGO + MÔ TẢ -->
+
+<div class="footer-col logo-col">
+
+<h2 class="footer-logo">CINEMAX</h2>
+
+<p>
+CineMax là hệ thống đặt vé xem phim trực tuyến,
+giúp bạn cập nhật các bộ phim bom tấn mới nhất
+và đặt vé nhanh chóng.
+</p>
+
+<div class="social-icons">
+<a href="#">📘</a>
+<a href="#">📷</a>
+<a href="#">▶</a>
+<a href="#">🎵</a>
+</div>
+
+</div>
+
+<!-- THÔNG TIN -->
+
+<div class="footer-col">
+
+<h3>THÔNG TIN</h3>
+
+<ul>
+<li><a href="#">Giới thiệu</a></li>
+<li><a href="#">Hệ thống rạp</a></li>
+<li><a href="#">Tin tức điện ảnh</a></li>
+<li><a href="#">Tuyển dụng</a></li>
+<li><a href="#">Liên hệ</a></li>
+</ul>
+
+</div>
+
+<!-- HỖ TRỢ -->
+
+<div class="footer-col">
+
+<h3>HỖ TRỢ</h3>
+
+<ul>
+<li><a href="#">Hướng dẫn đặt vé</a></li>
+<li><a href="#">Câu hỏi thường gặp</a></li>
+<li><a href="#">Chính sách đổi vé</a></li>
+<li><a href="#">Chính sách bảo mật</a></li>
+<li><a href="#">Điều khoản sử dụng</a></li>
+</ul>
+
+</div>
+
+<!-- THANH TOÁN -->
+
+<div class="footer-col">
+
+<h3>THANH TOÁN</h3>
+
+<ul>
+<li>Visa / Mastercard</li>
+<li>Momo</li>
+<li>ZaloPay</li>
+<li>Internet Banking</li>
+<li>Thanh toán tại rạp</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 CINEMAX | Website đặt vé xem phim</p>
+<p>Địa chỉ: Hà Nội, Việt Nam | Hotline: 1900 1234</p>
+
+</div>
+
+</footer>
+<!-- JS -->
+<script src="js/phim.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

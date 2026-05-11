@@ -1,0 +1,163 @@
+.contact-hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(to right,#111,#222);
+}
+
+.contact-hero h1{
+font-size:40px;
+}
+
+
+.contact-container{
+display:flex;
+justify-content:center; 
+gap:20px; 
+padding:40px;
+flex-wrap:wrap;
+}
+
+
+.contact-left,
+.contact-right{
+width:380px; 
+}
+
+/*căn giữa nội dung bên trái */
+.contact-left{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.contact-left p{
+margin:6px 0;
+}
+
+/* FORM */
+.contact-right input,
+.contact-right textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+}
+
+.contact-right button{
+padding:12px 20px;
+background:red;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.contact-right button:hover{
+background:darkred;
+}
+
+/* --- BẢN FIX CHỐT: CO CỤM MENU - CHỐNG TRÀN 100% --- */
+@media screen and (max-width: 768px) {
+    header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 10px !important;
+    }
+
+    .logo {
+        flex: 0 0 auto !important;
+        font-size: 18px !important;
+        gap: 5px !important;
+    }
+
+    .logo-img { width: 35px !important; }
+
+    nav {
+        flex: 1 !important;
+        text-align: center !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    nav ul li {
+        flex: 0 0 auto !important;
+    }
+
+    nav a {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        display: block !important;
+        white-space: nowrap !important;
+        padding: 5px 8px !important;
+    }
+
+    .auth {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        gap: 5px !important;
+    }
+
+    .login-btn, .register-btn {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        border-radius: 3px !important;
+    }
+
+    /* Contact responsive */
+    .contact-hero {
+        padding: 40px 10px !important;
+    }
+
+    .contact-hero h1 {
+        font-size: 28px !important;
+    }
+
+    .contact-container {
+        padding: 20px 10px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100% !important;
+        max-width: 400px !important;
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-hero {
+        padding: 30px 10px !important;
+    }
+
+    .contact-hero h1 {
+        font-size: 24px !important;
+    }
+
+    .contact-container {
+        padding: 15px 10px !important;
+    }
+
+    .contact-left,
+    .contact-right {
+        max-width: 100% !important;
+    }
+}

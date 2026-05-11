@@ -1,0 +1,1068 @@
+body{
+
+margin:0;
+font-family:Arial;
+background: linear-gradient(180deg, #07121f 0%, #0d1a34 45%, #111f42 100%);
+color:white;
+
+}
+.sakura span{
+
+position:fixed;
+top:-50px;
+font-size:20px;
+
+animation:fall 10s linear infinite;
+
+z-index:999;
+
+pointer-events:none;
+
+}
+
+.sakura{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+z-index:999;
+
+pointer-events:none;
+
+}
+
+.sakura span:nth-child(1){left:5%; animation-delay:0s;}
+.sakura span:nth-child(2){left:15%; animation-delay:2s;}
+.sakura span:nth-child(3){left:30%; animation-delay:4s;}
+.sakura span:nth-child(4){left:45%; animation-delay:1s;}
+.sakura span:nth-child(5){left:60%; animation-delay:3s;}
+.sakura span:nth-child(6){left:75%; animation-delay:5s;}
+.sakura span:nth-child(7){left:85%; animation-delay:2s;}
+.sakura span:nth-child(8){left:95%; animation-delay:6s;}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+}
+
+100%{
+transform:translateY(100vh) rotate(360deg);
+}
+
+}
+
+
+@keyframes fly{
+
+0%{
+left:-100px;
+}
+
+100%{
+left:110%;
+}
+
+}
+
+@keyframes movieFly{
+
+0%{
+left:-100px;
+transform:rotate(0deg);
+}
+
+50%{
+transform:rotate(15deg);
+}
+
+100%{
+left:110%;
+transform:rotate(0deg);
+}
+
+}
+
+/* HEADER */
+
+header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 8%;
+background:#000;
+
+position:sticky;
+top:0;
+
+z-index:1000;
+
+}
+
+nav ul{
+
+display:flex;
+gap:25px;
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:white;
+transition:0.3s;
+
+}
+
+/* khi di chuột vào */
+
+nav a:hover{
+
+color:red;
+
+}
+
+/* khi nhấn chuột */
+
+nav a:active{
+
+color:red;
+
+}
+
+
+
+/* LOGIN BUTTON */
+
+.auth{
+display:flex;
+gap:10px;
+}
+
+.login-btn{
+padding:8px 16px;
+border:1px solid blue;
+color:blue;
+text-decoration:none;
+border-radius:4px;
+}
+
+.login-btn:hover{
+background:blue;
+color:white;
+}
+
+.login-container{
+width:380px;
+box-sizing:border-box;
+margin:auto;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.register-btn{
+padding:8px 16px;
+background:blue;
+color:white;
+text-decoration:none;
+border-radius:4px;
+}
+
+.register-btn:hover{
+background:darkblue;
+}
+
+.register{
+text-align:center;
+margin-top:20px;
+width:100%;
+display:block;
+}
+
+.register p{
+margin:0;
+text-align:center;
+}
+
+/* HERO */
+
+.hero{
+
+height:600px;
+
+background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-overlay{
+
+height:100%;
+
+background:linear-gradient(
+180deg,
+rgba(255,255,255,0.18) 0%,
+rgba(14,32,65,0.40) 35%,
+rgba(14,32,65,0.18) 60%,
+rgba(14,32,65,0) 100%
+);
+
+display:flex;
+align-items:center;
+
+}
+
+.hero-content{
+
+margin-left:8%;
+max-width:500px;
+
+}
+
+.hero-content h1{
+
+font-size:55px;
+margin-bottom:20px;
+
+}
+
+.hero-content p{
+
+color:#ccc;
+line-height:1.6;
+
+}
+
+.hero-content .hero-button{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #ff3e3e, #d90000);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(255, 62, 62, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+}
+
+.hero-content .hero-button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(255, 62, 62, 0.4);
+    filter: brightness(1.05);
+}
+
+.hero-content .hero-button:active{
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(255, 62, 62, 0.35);
+}
+
+.trailer-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.trailer-popup .trailer-content {
+    position: relative;
+    background: #111;
+    border-radius: 18px;
+    padding: 20px;
+    max-width: 90%;
+    width: 680px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+}
+
+#closeTrailer {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+/* MOVIES */
+
+.movies{
+    padding:40px;
+}
+
+.movies h2{
+    margin-bottom:25px;
+}
+
+/* MOVIE LIST */
+
+.movie-list{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* MOVIE CARD */
+
+.movie{
+    background:#1f1f1f;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    width:220px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+/* hiệu ứng hover */
+
+.movie:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 15px red;
+}
+
+/* POSTER */
+
+.movie img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.movie:hover img{
+    transform:scale(1.05);
+}
+
+/* TÊN PHIM */
+
+.movie h3{
+    font-size:18px;
+    margin:10px 0;
+}
+
+.movie h3 a {
+    color: #ADD8E6; /* Xanh nước biển nhạt */
+    text-decoration: none;
+}
+
+.movie h3 a:hover {
+    color: #87CEEB; /* Xanh sáng hơn khi hover */
+}
+
+/* NÚT */
+
+.movie button,
+.movie a.button{
+    margin:5px;
+}
+
+.movie a.button{
+    display:inline-block;
+    text-decoration:none;
+    background:red;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+}
+
+/* BUTTON */
+
+button{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:darkred;
+}
+
+/* tránh bị đổi màu khi click */
+
+.logo:visited{
+color:red;
+}
+
+.logo:hover{
+color:#ff2a2a;
+}
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:red;
+font-size:30px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.logo-img{
+width:90px;
+}
+
+.flying-movie{
+position:fixed;
+left:-100px;
+font-size:40px;
+z-index:999;
+pointer-events:none;
+animation:movieFly 12s linear infinite;
+}
+
+.movie1{
+top:120px;
+}
+
+.movie2{
+top:300px;
+animation-duration:18s;
+font-size:30px;
+}
+
+.movie3{
+top:300px;
+animation-duration:18s;
+font-size:30px;
+}
+
+
+.movie4{
+top:300px;
+animation-duration:18s;
+font-size:30px;
+}
+
+.cinema-light{
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:radial-gradient(
+circle at center,
+rgba(255,255,255,0.15) 0%,
+rgba(0,0,0,0.8) 70%
+);
+
+pointer-events:none;
+
+animation:lightMove 6s infinite alternate;
+
+}
+
+@keyframes lightMove{
+
+0%{
+transform:scale(1);
+opacity:0.6;
+}
+
+100%{
+transform:scale(1.2);
+opacity:1;
+}
+
+}
+
+/* PHIM BAY */
+
+.film-fly{
+
+position:fixed;
+left:-100px;
+font-size:40px;
+
+animation:fly 12s linear infinite;
+
+z-index:999;
+pointer-events:none;
+
+text-shadow:
+0 0 10px red,
+0 0 20px red,
+0 0 40px red;
+
+}
+
+/* phim bay ở phần hero */
+
+.film1{
+top:120px;
+}
+
+/* phim bay phía dưới */
+
+.film2{
+top:300px;
+font-size:30px;
+
+animation-delay:6s;
+
+}
+
+/* animation */
+
+@keyframes fly{
+
+0%{
+left:-100px;
+transform:rotate(0deg);
+}
+
+50%{
+transform:rotate(15deg);
+}
+
+100%{
+left:110%;
+transform:rotate(0deg);
+}
+
+}
+
+.social-buttons a{
+
+padding:10px 16px;
+border-radius:6px;
+text-decoration:none;
+color:white;
+font-size:14px;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+}
+
+.social-buttons i{
+
+font-size:16px;
+
+}
+
+.footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px 0;
+font-size:16px;
+margin-top:50px;
+border-top:1px solid #222;
+}
+
+/* BUTTON ĐẶT VÉ - PASS VÉ */
+
+.movie-info button{
+background:red;
+border:none;
+padding:8px 16px;
+color:white;
+border-radius:4px;
+cursor:pointer;
+
+transition:all 0.3s ease;
+}
+
+/* khi di chuột vào */
+
+.movie-info button:hover{
+
+transform:translateY(-5px); 
+box-shadow:0 8px 20px rgba(255,0,0,0.5);
+background:#ff2a2a;
+
+}
+
+/* HOVER PHÓNG TO POSTER */
+
+.movie-card{
+overflow:hidden;
+transition:0.3s;
+}
+
+.movie-card img{
+width:100%;
+transition:0.4s;
+}
+
+.movie-card:hover img{
+transform:scale(1.08);
+}
+
+
+.snow-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:999;
+}
+
+.snowflake{
+position:absolute;
+top:-10px;
+color:white;
+font-size:10px;
+animation:snowfall linear infinite;
+}
+
+@keyframes snowfall{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(100vh);
+}
+}
+
+/* SEARCH BOX */
+
+.search-box{
+
+padding:6px 14px;
+border-radius:20px;
+
+border:1px solid #444;
+
+background:#111;
+
+color:white;
+
+outline:none;
+
+}
+
+.search-box::placeholder{
+color:#aaa;
+}
+
+.search-box:focus{
+border:1px solid red;
+}
+
+/* SEARCH SUGGESTIONS */
+
+.search-container{
+position:relative;
+}
+
+#suggestions{
+
+position:absolute;
+top:40px;
+left:0;
+
+width:100%;
+
+background:#111;
+
+border-radius:6px;
+
+overflow:hidden;
+
+box-shadow:0 5px 10px rgba(0,0,0,0.5);
+
+display:none;
+
+z-index:2000;
+
+}
+
+.suggestion-item{
+
+padding:10px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+.suggestion-item:hover{
+
+background:red;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#0a0a0a;
+color:white;
+padding:50px 8% 20px;
+margin-top:60px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-col{
+flex: 1;
+min-width: 200px;
+max-width:250px;
+}
+
+.footer-logo{
+color:red;
+margin-bottom:10px;
+}
+
+.footer-col h3{
+margin-bottom:15px;
+color:red;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin:8px 0;
+color:#ccc;
+}
+
+.footer-col ul li a{
+text-decoration:none;
+color:#ccc;
+transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+color:red;
+}
+
+.social-icons{
+margin-top:15px;
+}
+
+.social-icons a{
+font-size:20px;
+margin-right:10px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+color:red;
+transform:scale(1.2);
+}
+
+.footer-bottom{
+border-top:1px solid #333;
+margin-top:30px;
+padding-top:15px;
+text-align:center;
+font-size:14px;
+color:#aaa;
+}
+/* CSS cho lịch chiếu */
+.schedule{
+
+padding:40px;
+text-align:center;
+
+}
+
+.schedule h2{
+margin-bottom:25px;
+}
+
+.schedule-movie{
+
+margin-bottom:25px;
+
+}
+
+.showtimes button{
+
+margin:5px;
+
+background:#222;
+
+border:1px solid red;
+
+color:white;
+
+padding:10px 15px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.showtimes button:hover{
+
+background:red;
+
+transform:scale(1.1);
+
+}
+
+/* --- BẢN FIX CHỐT: CO CỤM MENU - CHỐNG TRÀN 100% --- */
+@media screen and (max-width: 768px) {
+    header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 10px !important;
+    }
+
+    /* Logo */
+    .logo {
+        flex: 0 0 auto !important;
+        font-size: 18px !important;
+        gap: 5px !important;
+    }
+    .logo-img { width: 35px !important; }
+
+    /* Menu */
+    nav {
+        flex: 1 !important;
+        text-align: center !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    nav ul li {
+        flex: 0 0 auto !important;
+    }
+
+    nav a {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        display: block !important;
+        white-space: nowrap !important;
+        padding: 5px 8px !important;
+    }
+
+    /* Auth buttons */
+    .auth {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        gap: 5px !important;
+    }
+
+    .login-btn, .register-btn {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        border-radius: 3px !important;
+    }
+
+    /* Hero responsive */
+    .hero {
+        height: 400px !important;
+    }
+
+    .hero-content {
+        margin-left: 4% !important;
+        max-width: 90% !important;
+    }
+
+    .hero-content h1 {
+        font-size: 36px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-content p {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+
+    .hero-content button {
+        padding: 12px 24px !important;
+        font-size: 14px !important;
+    }
+
+    /* Movies responsive */
+    .movies {
+        padding: 20px 10px !important;
+    }
+
+    .movies h2 {
+        font-size: 24px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .movie-list {
+        gap: 15px !important;
+        padding: 0 10px !important;
+    }
+
+    .movie {
+        width: 160px !important;
+        padding: 10px !important;
+    }
+
+    .movie img {
+        height: 240px !important;
+    }
+
+    .movie h3 {
+        font-size: 16px !important;
+    }
+
+    .movie a.button {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+    }
+
+    /* Schedule responsive */
+    .schedule {
+        padding: 20px 10px !important;
+    }
+
+    .schedule h2 {
+        font-size: 24px !important;
+    }
+
+    .showtimes {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    .showtimes button {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+        min-width: 60px !important;
+    }
+
+    /* Footer responsive */
+    .footer {
+        padding: 30px 4% 15px !important;
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .footer-col {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .footer-col h3 {
+        font-size: 18px !important;
+    }
+
+    .footer-bottom {
+        font-size: 12px !important;
+    }
+
+    /* Hide flying elements on mobile */
+    .flying-movie, .film-fly, .sakura {
+        display: none !important;
+    }
+
+    /* Trailer popup responsive */
+    .trailer-popup .trailer-content {
+        width: 95% !important;
+        padding: 15px !important;
+    }
+
+    #trailerVideo {
+        width: 100% !important;
+        height: 250px !important;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 350px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 28px !important;
+    }
+
+    .hero-content p {
+        font-size: 13px !important;
+    }
+
+    .movie {
+        width: 140px !important;
+    }
+
+    .movie img {
+        height: 200px !important;
+    }
+
+    .movie h3 {
+        font-size: 14px !important;
+    }
+
+    .showtimes button {
+        min-width: 50px !important;
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+
+    .footer {
+        padding: 20px 2% 10px !important;
+    }
+
+    .footer-col h3 {
+        font-size: 16px !important;
+    }
+
+    .footer-col ul li {
+        font-size: 14px !important;
+    }
+}

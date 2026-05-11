@@ -1,0 +1,409 @@
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0b0b0b;
+    color:white;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:red;
+    font-size:28px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.logo-img{
+    width:70px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:red;
+}
+
+nav .active{
+    color:red;
+}
+
+.auth{
+display:flex;
+gap:10px;
+}
+
+.login-btn{
+padding:8px 16px;
+border:1px solid blue;
+color:blue;
+text-decoration:none;
+border-radius:4px;
+}
+
+.login-btn:hover{
+background:blue;
+color:white;
+}
+
+.login-container{
+width:380px;
+box-sizing:border-box;
+margin:auto;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.register-btn{
+padding:8px 16px;
+background:blue;
+color:white;
+text-decoration:none;
+border-radius:4px;
+}
+
+.register-btn:hover{
+background:darkblue;
+}
+
+.register{
+text-align:center;
+margin-top:20px;
+width:100%;
+display:block;
+}
+
+.register p{
+margin:0;
+text-align:center;
+}
+/* TITLE */
+.title{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.title h1{
+    font-size:40px;
+    color:red;
+}
+
+.title p{
+    color:#ccc;
+}
+
+/* SERVICES GRID */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
+    padding:40px 8%;
+}
+
+/* BOX */
+.service-box{
+    background:#1f1f1f;
+    padding:20px;
+    border-radius:12px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px red;
+}
+
+.service-box h2{
+    color:red;
+    margin-bottom:15px;
+}
+
+/* ITEM */
+.item{
+    margin-bottom:15px;
+    padding:10px;
+    background:#111;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.item:hover{
+    background:#1a1a1a;
+    transform:translateX(5px);
+}
+
+.item h4{
+    margin:0;
+    color:#ff2a2a;
+    font-size:15px;
+}
+
+.item p{
+    margin:5px 0 0;
+    font-size:14px;
+    color:#ccc;
+}
+
+/* HIGHLIGHT */
+.highlight{
+    border:1px solid red;
+    box-shadow:0 0 20px rgba(255,0,0,0.4);
+}
+
+/* FOOTER */
+.footer{
+    background:black;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    border-top:1px solid #222;
+}
+/* FOOTER */
+.footer{
+    background:#0a0a0a;
+    color:white;
+    padding:50px 8% 20px;
+    margin-top:60px;
+}
+
+/* CONTAINER */
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+/* CỘT */
+.footer-col{
+    flex: 1;
+    min-width: 200px;
+    max-width:250px;
+}
+
+/* LOGO */
+.footer-logo{
+    color:red;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+/* TITLE */
+.footer-col h3{
+    margin-bottom:15px;
+    color:red;
+}
+
+/* LIST */
+.footer-col ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-col ul li{
+    margin:8px 0;
+    color:#ccc;
+}
+
+/* LINK */
+.footer-col ul li a{
+    text-decoration:none;
+    color:#ccc;
+    transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+    color:red;
+}
+
+/* SOCIAL */
+.social-icons{
+    margin-top:15px;
+}
+
+.social-icons a{
+    font-size:20px;
+    margin-right:10px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:red;
+    transform:scale(1.2);
+}
+
+/* BOTTOM */
+.footer-bottom{
+    border-top:1px solid #333;
+    margin-top:30px;
+    padding-top:15px;
+    text-align:center;
+    font-size:14px;
+    color:#aaa;
+}
+/* --- BẢN FIX CHỐT: CO CỤM MENU - CHỐNG TRÀN 100% --- */
+@media screen and (max-width: 768px) {
+    header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 10px !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+    }
+
+    .logo {
+        flex: 0 0 auto !important;
+        font-size: 18px !important;
+        gap: 5px !important;
+    }
+
+    .logo-img { width: 35px !important; }
+
+    nav {
+        flex: 1 !important;
+        text-align: center !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    nav ul li {
+        flex: 0 0 auto !important;
+    }
+
+    nav a {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        display: block !important;
+        white-space: nowrap !important;
+        padding: 5px 8px !important;
+    }
+
+    .auth {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        gap: 5px !important;
+    }
+
+    .login-btn, .register-btn {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        border-radius: 3px !important;
+    }
+
+    /* Services responsive */
+    .title {
+        padding: 30px 10px !important;
+    }
+
+    .title h1 {
+        font-size: 28px !important;
+    }
+
+    .services {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 20px !important;
+        padding: 20px 4% !important;
+    }
+
+    .service-box {
+        padding: 15px !important;
+    }
+
+    .service-box h2 {
+        font-size: 18px !important;
+    }
+
+    .item h4 {
+        font-size: 14px !important;
+    }
+
+    .item p {
+        font-size: 13px !important;
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .footer {
+        padding: 30px 4% 15px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        padding: 20px 10px !important;
+    }
+
+    .title h1 {
+        font-size: 24px !important;
+    }
+
+    .services {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 15px 2% !important;
+    }
+
+    .service-box {
+        padding: 12px !important;
+    }
+
+    .service-box h2 {
+        font-size: 16px !important;
+    }
+
+    .item {
+        padding: 8px !important;
+    }
+
+    .item h4 {
+        font-size: 13px !important;
+    }
+
+    .footer {
+        padding: 20px 2% 10px !important;
+    }
+}

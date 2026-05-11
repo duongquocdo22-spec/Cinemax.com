@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thức ăn & Nước - CineMax</title>
+
+<link rel="stylesheet" href="css/thuc_an_va_nuoc.css">
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+        <img src="logo_trang_chu.png" class="logo-img">
+        CINEMAX
+    </a>
+
+    <nav>
+        <ul class="menu-nav">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="phim.html">Phim</a></li>
+            <li><a href="rap.html">Rạp</a></li>
+            <li><a href="thuc_an_va_nuoc.html">Thức ăn & Nước</a></li>
+            <li><a href="khuyen_mai.html">Khuyến mãi</a></li>
+            <li><a href="dichvu_tienich.html">Dịch Vụ & Tiện ích</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="auth">
+        <a href="login.html" class="login-btn">Đăng nhập</a>
+        <a href="register.html" class="register-btn">Đăng ký</a>
+    </div>
+</header>
+
+<!-- TIÊU ĐỀ -->
+<h1>🍿 Đồ Ăn & Nước Uống 🥤</h1>
+
+<!-- MENU (QUAN TRỌNG) -->
+<!-- MENU (QUAN TRỌNG) -->
+<div class="menu">
+
+    <div class="item">
+        <img src="bỏng nhỏ.jpg">
+        <h2>Bỏng nhỏ</h2>
+        <p>30.000đ</p>
+        <button onclick="addToCart('Bỏng nhỏ',30000)">Chọn</button>
+    </div>
+
+    <div class="item">
+        <img src="bỏng loại 2.png">
+        <h2>Bỏng lớn</h2>
+        <p>50.000đ</p>
+        <button onclick="addToCart('Bỏng lớn',50000)">Chọn</button>
+    </div>
+
+    <div class="item">
+        <img src="pepsi.png">
+        <h2>Pepsi</h2>
+        <p>20.000đ</p>
+        <button onclick="addToCart('Pepsi',20000)">Chọn</button>
+    </div>
+
+    <div class="item">
+        <img src="cocacola.png">
+        <h2>Coca Cola</h2>
+        <p>20.000đ</p>
+        <button onclick="addToCart('Coca Cola',20000)">Chọn</button>
+    </div>
+
+    <div class="item">
+        <img src="mirinda.png">
+        <h2>Mirinda</h2>
+        <p>20.000đ</p>
+        <button onclick="addToCart('Mirinda',20000)">Chọn</button>
+    </div>
+
+    <div class="item">
+        <img src="combo.png">
+        <h2>Combo( bỏng và nước)</h2>
+        <p>60.000đ</p>
+        <button onclick="addToCart('Combo',60000)">Chọn</button>
+    </div>
+
+</div>
+
+<!-- GIỎ HÀNG -->
+<div class="cart-box">
+
+    <h2>💳 Thanh toán</h2>
+
+    <p><b>Sản phẩm:</b></p>
+<ul id="cartList"></ul>
+
+    <h3>Tổng tiền:</h3>
+    <p id="totalPrice">0 VND</p>
+
+    <p>Phương thức thanh toán</p>
+
+    <div class="payment-box">
+        <select id="payment"> 
+            <option>💵 Tiền mặt</option>
+            <option>📱 Momo</option>
+            <option>🏦 Chuyển khoản</option>
+        </select>
+    </div>
+
+    <div class="booking-buttons">
+<button class="confirm-btn" onclick="pay()">Thanh toán</button>
+<button class="cancel-btn" onclick="clearCart()">Hủy</button>
+    </div>
+
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+    <!-- LOGO + MÔ TẢ -->
+    <div class="footer-col">
+        <h2 class="footer-logo">CINEMAX</h2>
+        <p>
+        CineMax là hệ thống đặt vé xem phim trực tuyến,
+        giúp bạn cập nhật các bộ phim bom tấn mới nhất
+        và đặt vé nhanh chóng.
+        </p>
+
+        <div class="social-icons">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+            <a href="#">▶</a>
+            <a href="#">🎵</a>
+        </div>
+    </div>
+
+    <!-- THÔNG TIN -->
+    <div class="footer-col">
+        <h3>THÔNG TIN</h3>
+        <ul>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Hệ thống rạp</a></li>
+            <li><a href="#">Tin tức điện ảnh</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+    <!-- HỖ TRỢ -->
+    <div class="footer-col">
+        <h3>HỖ TRỢ</h3>
+        <ul>
+            <li><a href="#">Hướng dẫn đặt vé</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Chính sách đổi vé</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+        </ul>
+    </div>
+
+    <!-- THANH TOÁN -->
+    <div class="footer-col">
+        <h3>THANH TOÁN</h3>
+        <ul>
+            <li>Visa / Mastercard</li>
+            <li>Momo</li>
+            <li>ZaloPay</li>
+            <li>Internet Banking</li>
+            <li>Thanh toán tại rạp</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+    <p>© 2026 CINEMAX | Website đặt vé xem phim</p>
+    <p>Địa chỉ: Hà Nội, Việt Nam | Hotline: 1900 1234</p>
+</div>
+
+</footer>
+
+
+ <script src="js/thuc_an_va_nuoc.js"></script>
+
+</body>
+</html>
